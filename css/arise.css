@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    background: #000;
+}
+
+/* Beru Background - FASTER MOVEMENT - FIXED */
+.beru-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/beru-solo-leveling.webp'); /* ← CHANGED TO BERU IMAGE */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: beruDramatic 12s infinite alternate ease-in-out;
+}
+
+@keyframes beruDramatic {
+    0% {
+        background-position: 40% 30%;
+        filter: brightness(0.8);
+    }
+    33% {
+        background-position: 60% 50%;
+        filter: brightness(1);
+    }
+    66% {
+        background-position: 50% 60%;
+        filter: brightness(0.9);
+    }
+    100% {
+        background-position: 45% 40%;
+        filter: brightness(0.85);
+    }
+}
+
+/* Shadow Smoke Particles - FASTER */
+.shadow-smoke {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(102, 0, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 4s infinite ease-in-out;
+    filter: blur(20px);
+}
+
+.shadow-smoke:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shadow-smoke:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.shadow-smoke:nth-child(3) {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-20px) scale(1.1); opacity: 0.6; }
+}
+
+/* Beru's Eyes - FASTER GLOW */
+.beru-eyes {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 100px;
+    z-index: 2;
+}
+
+.eye {
+    width: 60px;
+    height: 40px;
+    background: #ff0000;
+    border-radius: 50%;
+    position: relative;
+    animation: eyeGlow 1.5s infinite alternate;
+    box-shadow: 
+        0 0 20px #ff0000,
+        0 0 40px #ff0000,
+        0 0 60px #ff0000;
+}
+
+.eye::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes eyeGlow {
+    0% { 
+        box-shadow: 
+            0 0 20px #ff0000,
+            0 0 40px #ff0000,
+            0 0 60px #ff0000;
+        transform: scale(1);
+    }
+    100% { 
+        box-shadow: 
+            0 0 30px #ff0000,
+            0 0 60px #ff0000,
+            0 0 90px #ff0000;
+        transform: scale(1.1);
+    }
+}
+
+/* Arise Container */
+.arise-container {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+/* Shadow Aura - FASTER PULSE */
+.shadow-aura {
+    position: relative;
+    display: inline-block;
+}
+
+.shadow-aura::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 0, 255, 0.4) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    animation: auraPulse 2s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes auraPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+}
+
+/* Arise Button */
+.arise-btn {
+    position: relative;
+    background: linear-gradient(45deg, #330066, #6600ff);
+    color: white;
+    border: none;
+    padding: 2rem 4rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    overflow: hidden;
+    box-shadow: 
+        0 0 20px rgba(102, 0, 255, 0.5),
+        0 0 40px rgba(102, 0, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.arise-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 30px rgba(102, 0, 255, 0.7),
+        0 0 60px rgba(102, 0, 255, 0.5),
+        inset 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.arise-btn:active {
+    transform: scale(0.95);
+}
+
+/* Shadow Particles on Button - FASTER */
+.shadow-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.shadow-particles::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--x) var(--y), 
+        rgba(255, 0, 0, 0.3) 0%, transparent 20%);
+    animation: particleMove 1.5s infinite linear;
+}
+
+@keyframes particleMove {
+    0% { transform: translate(0, 0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(100px, 100px); opacity: 0; }
+}
+
+/* Tagline - FASTER GLOW */
+.tagline {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #ff0000;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    letter-spacing: 2px;
+    animation: textGlow 1.5s infinite alternate;
+}
+
+@keyframes textGlow {
+    0% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    100% { text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6); }
+}

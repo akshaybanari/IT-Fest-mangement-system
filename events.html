@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - IT FEST</title>
+    <link rel="stylesheet" href="css/events.css">
+</head>
+<body>
+    <!-- Background same as home page -->
+    <div class="background-container"></div>
+    
+    <!-- Navigation -->
+   <!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">IT FEST</div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="events.html" class="nav-link">Events</a>
+            </li>
+            <li class="nav-item">
+                <a href="my-registrations.html" class="nav-link">My Registrations</a> <!-- ADDED -->
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Events Carousel -->
+    <div class="events-carousel">
+        <div class="carousel-container">
+            <!-- Event 1: Quiz -->
+            <div class="event-slide active">
+                <div class="event-frame">
+                    <div class="template-gif" style="background-image: url('images/solo-leveling-sung-jin-woo.gif')"></div>
+                    <div class="event-content">
+                        <h2 class="event-title">Quiz</h2>
+                        <p class="event-date">March 15, 2025 | 6:00 PM</p>
+                        <p class="event-tagline">Only the smartest survive — join the IT Quiz challenge!</p>
+                        <p class="event-description">A brain-teasing tech quiz to test your knowledge on IT, AI, coding, and innovation.</p>
+                        <div class="event-details">
+                            <p><strong>Venue:</strong> Main Auditorium</p>
+                            <p><strong>Duration:</strong> 1 hours</p>
+                            <p><strong>Team Member Required:</strong>2</p>
+                        </div>
+                        <button class="register-btn" onclick="openRegistrationForm('Quiz', 'quiz')">Register Now</button>
+                        
+                        <!-- Registration Form for this event -->
+                        <div class="registration-form" style="display: none;">
+                            <h3>Register for <span class="event-name"></span></h3>
+                            <form class="register-form" onsubmit="handleRegistration(event)">
+                                <input type="hidden" name="eventId" class="event-id">
+                                
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Full Name" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email Address" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="tel" name="phone" placeholder="Phone Number" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="college" placeholder="College Name" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="department" placeholder="Department" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select name="year" required class="form-input">
+                                        <option value="">Select Year</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="section" placeholder="Section" class="form-input">
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">Register Now</button>
+                                <button type="button" class="cancel-btn" onclick="closeRegistrationForm()">Cancel</button>
+                            </form>
+                            
+                            <div class="registration-message" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2: IT Debate -->
+            <div class="event-slide">
+                <div class="event-frame">
+                    <div class="template-gif" style="background-image: url('images/solo-leveling-debate.gif')"></div>
+                    <div class="event-content">
+                        <h2 class="event-title">IT Debate</h2>
+                        <p class="event-tagline">"Speak Logic. Defend Ideas."</p>
+                        <p class="event-date">March 16, 2025 | 10:00 AM</p>
+                        <p class="event-description">A platform to showcase your opinions on trending IT topics with logic and clarity.</p>
+                        <div class="event-details">
+                            <p><strong>Venue:</strong> Seminar Hall</p>
+                            <p><strong>Duration:</strong> 3 hours</p>
+                            <p><strong>Players Required:</strong> 2 per team</p>
+                        </div>
+                        <button class="register-btn" onclick="openRegistrationForm('IT Debate', 'it-debate')">Register Now</button>
+                        
+                        <!-- Registration Form for this event -->
+                        <div class="registration-form" style="display: none;">
+                            <h3>Register for <span class="event-name"></span></h3>
+                            <form class="register-form" onsubmit="handleRegistration(event)">
+                                <input type="hidden" name="eventId" class="event-id">
+                                
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Full Name" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email Address" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="tel" name="phone" placeholder="Phone Number" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="college" placeholder="College Name" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="department" placeholder="Department" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select name="year" required class="form-input">
+                                        <option value="">Select Year</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="section" placeholder="Section" class="form-input">
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">Register Now</button>
+                                <button type="button" class="cancel-btn" onclick="closeRegistrationForm()">Cancel</button>
+                            </form>
+                            
+                            <div class="registration-message" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 3: Web Wizards -->
+            <div class="event-slide">
+                <div class="event-frame">
+                    <div class="template-gif" style="background-image: url('images/aniyuki-solo-leveling-gif-1-web-wizard.gif')"></div>
+                    <div class="event-content">
+                        <h2 class="event-title">Web Wizards</h2>
+                        <p class="event-tagline">"Design the Future."</p>
+                        <p class="event-date">March 16, 2025 | 2:00 PM</p>
+                        <p class="event-description">Design and develop an innovative website showcasing creativity and coding brilliance.</p>
+                        <div class="event-details">
+                            <p><strong>Venue:</strong> Computer Lab</p>
+                            <p><strong>Duration:</strong> 5 hours</p>
+                            <p><strong>Players Required:</strong> 1–2 per team</p>
+                        </div>
+                        <button class="register-btn" onclick="openRegistrationForm('Web Wizards', 'web-wizards')">Register Now</button>
+                        
+                        <!-- Registration Form for this event -->
+                        <div class="registration-form" style="display: none;">
+                            <h3>Register for <span class="event-name"></span></h3>
+                            <form class="register-form" onsubmit="handleRegistration(event)">
+                                <input type="hidden" name="eventId" class="event-id">
+                                
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Full Name" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email Address" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="tel" name="phone" placeholder="Phone Number" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="college" placeholder="College Name" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="department" placeholder="Department" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select name="year" required class="form-input">
+                                        <option value="">Select Year</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="section" placeholder="Section" class="form-input">
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">Register Now</button>
+                                <button type="button" class="cancel-btn" onclick="closeRegistrationForm()">Cancel</button>
+                            </form>
+                            
+                            <div class="registration-message" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 4: Gaming Arena -->
+            <div class="event-slide">
+                <div class="event-frame">
+                    <div class="template-gif" style="background-image: url('images/game.gif')"></div>
+                    <div class="event-content">
+                        <h2 class="event-title">Gaming Arena</h2>
+                        <p class="event-tagline">"Play Hard. Win Big."</p>
+                        <p class="event-date">March 17, 2025 | 11:00 AM</p>
+                        <p class="event-description">Compete in a high-voltage gaming face-off where skill and strategy lead to glory.</p>
+                        <div class="event-details">
+                            <p><strong>Venue:</strong> Gaming Zone</p>
+                            <p><strong>Duration:</strong> 6 hours</p>
+                            <p><strong>Players Required:</strong> 1 per participant</p>
+                        </div>
+                        <button class="register-btn" onclick="openRegistrationForm('Gaming Arena', 'gaming-arena')">Register Now</button>
+                        
+                        <!-- Registration Form for this event -->
+                        <div class="registration-form" style="display: none;">
+                            <h3>Register for <span class="event-name"></span></h3>
+                            <form class="register-form" onsubmit="handleRegistration(event)">
+                                <input type="hidden" name="eventId" class="event-id">
+                                
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Full Name" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email Address" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="tel" name="phone" placeholder="Phone Number" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="college" placeholder="College Name" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="department" placeholder="Department" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select name="year" required class="form-input">
+                                        <option value="">Select Year</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="section" placeholder="Section" class="form-input">
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">Register Now</button>
+                                <button type="button" class="cancel-btn" onclick="closeRegistrationForm()">Cancel</button>
+                            </form>
+                            
+                            <div class="registration-message" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 5: App Innovators -->
+            <div class="event-slide">
+                <div class="event-frame">
+                    <div class="template-gif" style="background-image: url('images/app.gif')"></div>
+                    <div class="event-content">
+                        <h2 class="event-title">App Innovators</h2>
+                        <p class="event-tagline">"Build Smart. Think Mobile."</p>
+                        <p class="event-date">March 17, 2025 | 3:00 PM</p>
+                        <p class="event-description">Design a creative mobile app that solves real-world challenges with smart technology.</p>
+                        <div class="event-details">
+                            <p><strong>Venue:</strong> Innovation Lab</p>
+                            <p><strong>Duration:</strong> 4 hours</p>
+                            <p><strong>Players Required:</strong> 2–3 per team</p>
+                        </div>
+                        <button class="register-btn" onclick="openRegistrationForm('App Innovators', 'app-innovators')">Register Now</button>
+                        
+                        <!-- Registration Form for this event -->
+                        <div class="registration-form" style="display: none;">
+                            <h3>Register for <span class="event-name"></span></h3>
+                            <form class="register-form" onsubmit="handleRegistration(event)">
+                                <input type="hidden" name="eventId" class="event-id">
+                                
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Full Name" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email Address" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="tel" name="phone" placeholder="Phone Number" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="college" placeholder="College Name" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="department" placeholder="Department" required class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select name="year" required class="form-input">
+                                        <option value="">Select Year</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="section" placeholder="Section" class="form-input">
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">Register Now</button>
+                                <button type="button" class="cancel-btn" onclick="closeRegistrationForm()">Cancel</button>
+                            </form>
+                            
+                            <div class="registration-message" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 6: Tech Hunt -->
+            <div class="event-slide">
+                <div class="event-frame">
+                    <div class="template-gif" style="background-image: url('images/tech.gif')"></div>
+                    <div class="event-content">
+                        <h2 class="event-title">Tech Hunt</h2>
+                        <p class="event-tagline">"Decode the Clues. Find the Code."</p>
+                        <p class="event-date">March 18, 2025 | 9:00 AM</p>
+                        <p class="event-description">A thrilling treasure hunt that blends puzzles, logic, and tech clues across the campus.</p>
+                        <div class="event-details">
+                            <p><strong>Venue:</strong> Campus Wide</p>
+                            <p><strong>Duration:</strong> 3 hours</p>
+                            <p><strong>Players Required:</strong> 3–4 per team</p>
+                        </div>
+                        <button class="register-btn" onclick="openRegistrationForm('Tech Hunt', 'tech-hunt')">Register Now</button>
+                        
+                        <!-- Registration Form for this event -->
+                        <div class="registration-form" style="display: none;">
+    <h3>Register for <span class="event-name"></span></h3>
+    <form class="register-form" onsubmit="handleRegistration(event)">
+        <input type="hidden" name="eventId" class="event-id">
+        
+        <div class="form-group">
+            <input type="text" name="name" placeholder="Full Name" required class="form-input">
+        </div>
+        
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Email Address" required class="form-input">
+        </div>
+        
+        <div class="form-group">
+            <input type="tel" name="phone" placeholder="Phone Number" required class="form-input">
+        </div>
+        
+        <div class="form-group">
+            <input type="text" name="college" placeholder="College Name" required class="form-input">
+        </div>
+        
+        <div class="form-group">
+            <input type="text" name="department" placeholder="Department" required class="form-input">
+        </div>
+        
+        <div class="form-group">
+            <select name="year" required class="form-input">
+                <option value="">Select Year</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <input type="text" name="section" placeholder="Section" class="form-input">
+        </div>
+        
+        <div class="form-buttons">
+            <button type="submit" class="submit-btn">Register Now</button>
+            <button type="button" class="cancel-btn" onclick="closeRegistrationForm()">Cancel</button>
+        </div>
+    </form>
+    
+    <div class="registration-message" style="display: none;"></div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="carousel-arrow prev">‹</button>
+        <button class="carousel-arrow next">›</button>
+    </div>
+
+    <script src="js/events.js"></script>
+    <script src="js/registration.js"></script>
+    <script src="js/viewport-fix.js"></script>
+</body>
+</html>
